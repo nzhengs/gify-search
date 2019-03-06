@@ -1,0 +1,30 @@
+body {
+  background-color: rgb(247, 247, 240);
+}
+.topics-container {
+  background-color: rgb(79, 123, 148);
+}
+.container {
+  margin-top: 10px;
+}
+nav {
+  color: rgb(219, 219, 141);
+}
+nav > p {
+  margin: auto;
+  font-family: "Roboto Slab", serif;
+  font-size: 40px;
+  font-weight: bolder;
+}
+.topic {
+  margin: 10px;
+  background-color: rgb(79, 123, 148);
+  color: azure;
+  cursor: pointer;
+}
+.new-topic {
+ 
+}
+#submit {
+  margin: 10px 0 10px 0;
+}

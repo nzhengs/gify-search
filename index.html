@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8" />
-    <title></title>
+    <title>Gify Search</title>
 
     <!-- Link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,13 +21,35 @@
   </head>
 
   <body>
-    <!-- div to display botton -->
-
-    <div class="topics"></div>
-    
-      <input type="text" name="" id="add-topic" />
-      <button id="submit">submit</button>
+    <header>
+      <nav class="navbar navbar-light" style="background-color: #020303">
+        <p>
+          Gify Search
+        </p>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-8 ">
+          <div class="topics topics-container"></div>
+        </div>
+        <div class="col-4 new-topic">
+          <div class="row">
+            <div class="col-12">
+              <h5> Add topic here</h5>
+              <input type="text" name="" id="add-topic" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12"><button id="submit">submit</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="row"> 
       <div id="gifs"></div>
+    </div>
+  </div>
+
 
     <!-- Link to your JavaScript -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
