@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var topics = ["cat", "dog", "rabbit", "chicken"];
+  var topics = ["cat", "dog", "rabbit", "chicken","mice","parrot","horse","elephant","peacock","fish"];
   var apiKey = "dw3fylOS6Pf9y9QaGWwQ4YMUj10A23xw";
 
   displayButtons(topics);
@@ -38,6 +38,7 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(response) {
       var result = response.data;
+      console.log(result);
       displayGifs(result);
     });
     return promise;
@@ -62,6 +63,7 @@ $(document).ready(function() {
       ratingDisplay.text(rating);
 
       var image = $("<div>");
+      image.addClass("allDisplay")
       image.append(ratingDisplay);
       image.append(imgDisplay);
       $("#gifs").append(image);
@@ -75,7 +77,12 @@ $(document).ready(function() {
       topics.push(input);
       addButton(input);
     }
+    else {
+      alert("Already added!!!")
+    }
   }
+
+
   $("#submit").click(function() {
     addTopic();
   });

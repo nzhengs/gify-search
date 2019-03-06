@@ -2,13 +2,13 @@ body {
   background-color: rgb(247, 247, 240);
 }
 .topics-container {
-  background-color: rgb(79, 123, 148);
+  background-color: rgb(148, 174, 189);
 }
 .container {
   margin-top: 10px;
 }
 nav {
-  color: rgb(219, 219, 141);
+  color: rgb(238, 238, 225);
 }
 nav > p {
   margin: auto;
@@ -17,14 +17,28 @@ nav > p {
   font-weight: bolder;
 }
 .topic {
-  margin: 10px;
-  background-color: rgb(79, 123, 148);
+  margin: 5px;
+  background-color: rgb(49, 88, 109);
   color: azure;
   cursor: pointer;
 }
 .new-topic {
- 
 }
 #submit {
   margin: 10px 0 10px 0;
+}
+.allDisplay {
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 10px;
+  border-color: rgb(205, 228, 240);
+  border: 10px;
+  background-color: rgb(205, 228, 240);
+}
+.col-s-12 > .topic{
+    margin: 2px;
+
 }
