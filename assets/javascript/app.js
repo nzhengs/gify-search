@@ -3,9 +3,6 @@ $(document).ready(function() {
   var apiKey = "dw3fylOS6Pf9y9QaGWwQ4YMUj10A23xw";
 
   displayButtons(topics);
-  setUpTopicClickEvent();
-
-  ///////////////////
 
   function displayButtons(topics) {
     topics.forEach(function(topic) {
@@ -18,15 +15,13 @@ $(document).ready(function() {
     btn.addClass("topic");
     btn.text(topic);
     $(".topics").append(btn);
+    btn.click(onTopicClick);
   }
 
-  function setUpTopicClickEvent() {
-    $(".topic").click(function() {
-      var topic = $(this).text();
-      console.log(topic);
-      getAndDisplayTopicGifs(topic).then(function() {
-        setUpOnClickOnGif();
-      });
+  function onTopicClick() {
+    var topic = $(this).text();
+    getAndDisplayTopicGifs(topic).then(function() {
+      setUpOnClickOnGif();
     });
   }
 
@@ -43,7 +38,6 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(response) {
       var result = response.data;
-      console.log(result);
       displayGifs(result);
     });
     return promise;
@@ -58,11 +52,10 @@ $(document).ready(function() {
       imgDisplay.addClass("gif");
 
       var dataStill = aGifData.images.fixed_height_still.url;
-      console.log(dataStill);
-      console.log(imgUrl);
+
       imgDisplay.attr("data-still", dataStill);
       imgDisplay.attr("data-animate", imgUrl);
-      imgDisplay.attr("data-state", "still");
+      imgDisplay.attr("data-state", "animate");
 
       var ratingDisplay = $("<p>");
       var rating = aGifData.rating;
@@ -89,7 +82,6 @@ $(document).ready(function() {
 });
 function setUpOnClickOnGif() {
   $(".gif").click(function pauseStartGif() {
-    console.log("Clicked gif");
     var state = $(this).attr("data-state");
     if (state === "still") {
       $(this).attr("src", $(this).attr("data-animate"));
